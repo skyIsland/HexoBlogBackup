@@ -84,8 +84,8 @@ duoshuo: false
 wangyiyun: false
 
 #3、畅言
-changyan_appid: false
-changyan_conf: false
+changyan_appid: 'cyrYAo8vL'
+changyan_conf: 'prod_e8cafb700cafc04daf7ddac62371a657'
 
 #4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
 disqus: false
@@ -123,4 +123,4 @@ friends:
   百度一下: https://www.baidu.com
  
 
-aboutme:   这世间上有一千万种等待,最好的一种,叫做来日可期.
+aboutme:   在浮躁的社会，安心地做一个落后时代的人。坚持生命有它严肃的价值，坚持理想和爱。愿你们都能与更宏大的东西找到链接，从而真正感受到自身的存在和意义。
