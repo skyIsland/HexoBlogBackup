@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//ismatch.cn">
   <title>js必备工具方法 | 丹麦的面包不单卖的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +15,8 @@
 <meta property="og:url" content="//ismatch.cn/2018/03/05/js必备工具方法/index.html">
 <meta property="og:site_name" content="丹麦的面包不单卖的博客">
 <meta property="og:description" content="1.所有的可能组合方式 12345678const anagrams = str =&amp;gt; &amp;#123;  if(str.length &amp;lt;= 2)  return str.length === 2 ? [str, str[1] + str[0]] : [str];  return str.split(&apos;&apos;).reduce( (acc, letter, i) =&amp;gt; &amp;#123;">
-<meta property="og:updated_time" content="2018-03-04T18:07:45.589Z">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-18T14:49:25.826Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js必备工具方法">
 <meta name="twitter:description" content="1.所有的可能组合方式 12345678const anagrams = str =&amp;gt; &amp;#123;  if(str.length &amp;lt;= 2)  return str.length === 2 ? [str, str[1] + str[0]] : [str];  return str.split(&apos;&apos;).reduce( (acc, letter, i) =&amp;gt; &amp;#123;">
@@ -37,7 +38,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -53,7 +54,7 @@
 		  <h1 class="header-author"><a href="/">ismatch</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">这世界上有一千万种等待，最好的一种，叫做来日可期</p>
+		<p class="header-subtitle">便纵有千种风情,更与何人说。</p>
 		
 
 		<nav class="header-menu">
@@ -111,7 +112,7 @@
 			  <h1 class="header-author js-header-author">ismatch</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>这世界上有一千万种等待，最好的一种，叫做来日可期<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>便纵有千种风情,更与何人说。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -234,6 +235,157 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getUrlParameters = <span class="function"><span class="params">url</span> =&gt;</span></span><br><span class="line">  <span class="built_in">Object</span>.assign(...url.match(<span class="regexp">/([^?=&amp;]+)(=([^&amp;]*))?/g</span>).map(<span class="function"><span class="params">m</span> =&gt;</span> &#123;[f,v] = m.split(<span class="string">'='</span>); <span class="keyword">return</span> &#123;[f]:v&#125;&#125;));</span><br><span class="line">  <span class="comment">// getUrlParameters('http://url.com/page?name=Adam&amp;surname=Smith') -&gt; &#123;name: 'Adam', surname: 'Smith'&#125;</span></span><br></pre></td></tr></table></figure>
 <p>31.UUID生成</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const uuid = _ =&gt;</span><br><span class="line">  ( [<span class="number">1e7</span>]+<span class="number">-1e3</span>+<span class="number">-4e3</span>+<span class="number">-8e3</span>+<span class="number">-1e11</span> ).replace( /[<span class="number">018</span>]/g, c =&gt;</span><br><span class="line">    (c ^ crypto.getRandomValues(new Uint8Array(<span class="number">1</span>))[<span class="number">0</span>] &amp; <span class="number">15</span> &gt;&gt; c / <span class="number">4</span>).toString(<span class="number">16</span>)</span><br><span class="line">  );</span><br><span class="line"><span class="comment">// uuid() -&gt; '7982fcfe-5721-4632-bede-6000885be57d'</span></span><br></pre></td></tr></table></figure>
+<p>32.jQuery 后来者元素监听事件(on替代live)<br>live可以给不存在的元素绑定事件，利用冒泡事件，但是在1.9里面被删除了，怎么办呢？<br>1.7以后有一个on，这个功能就被整合进去了</p>
+<ul>
+<li><p>原来的写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"a"</span>).live(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">    alert(<span class="string">'ok'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>现在的写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"body"</span>).on(<span class="string">"click"</span>,<span class="string">"a"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">      alert(<span class="string">'ok'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">可以指定绑定在哪个父节点上，在后面的选择器内写上要触发的元素选择器</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>33.简写技巧</p>
+<h4 id="初级篇"><a href="#初级篇" class="headerlink" title="初级篇"></a>初级篇</h4><ul>
+<li>1、三目运算符<ul>
+<li>下面是一个很好的例子，将一个完整的 if 语句，简写为一行代码。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> answer;</span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span>) &#123;</span><br><span class="line">    answer = <span class="string">'greater than 10'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    answer = <span class="string">'less than 10'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">const</span> answer = x &gt; <span class="number">10</span> ? <span class="string">'greater than 10'</span> : <span class="string">'less than 10'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2、循环语句<ul>
+<li>当使用纯 JavaScript（不依赖外部库，如 jQuery 或 lodash）时，下面的简写会非常有用。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (let i = <span class="number">0</span>; i &lt; allImgs.length; i++)</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">for</span> (let <span class="keyword">index</span> <span class="keyword">of</span> allImgs)</span><br><span class="line"></span><br><span class="line"><span class="comment">//下面是遍历数组 forEach 的简写示例：</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logArrayElements</span><span class="params">(element, <span class="keyword">index</span>, <span class="keyword">array</span>)</span> <span class="comment">&#123;</span></span></span><br><span class="line"><span class="function"><span class="comment">  console.log("a[" + index + "] = " + element);</span></span></span><br><span class="line"><span class="function"><span class="comment">&#125;</span></span></span><br><span class="line"><span class="function">[2, 5, 9].<span class="title">forEach</span><span class="params">(logArrayElements)</span>;</span></span><br><span class="line"><span class="comment">// logs:</span></span><br><span class="line"><span class="comment">// a[0] = 2</span></span><br><span class="line"><span class="comment">// a[1] = 5</span></span><br><span class="line"><span class="comment">// a[2] = 9</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>3、声明变量<ul>
+<li>在函数开始之前，对变量进行赋值是一种很好的习惯。在申明多个变量时：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x;</span><br><span class="line"><span class="keyword">let</span> y;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">z</span> = <span class="number">3</span>;</span><br><span class="line">可以简写为：</span><br><span class="line"><span class="keyword">let</span> x, y, <span class="attr">z=3;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>4、if 语句</p>
+<ul>
+<li>在使用 if 进行基本判断时，可以省略赋值运算符。<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (likeJavaScript === true)</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">if</span> (likeJavaScript)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>5、十进制数</p>
+<ul>
+<li>可以使用科学计数法来代替较大的数据，如可以将 10000000 简写为 1e7。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123; &#125;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1</span>e<span class="number">7</span>; i++) &#123; &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>6、多行字符串<ul>
+<li>如果需要在代码中编写多行字符串，就像下面这样：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> lorem = <span class="symbol">'Lorem</span> ipsum dolor sit amet, consectetur\n\t'</span><br><span class="line">    + <span class="symbol">'adipisicing</span> elit, sed <span class="keyword">do</span> eiusmod tempor incididunt\n\t'</span><br><span class="line">    + <span class="symbol">'ut</span> labore et dolore magna aliqua. Ut enim ad minim\n\t'</span><br><span class="line">    + <span class="symbol">'veniam</span>, quis nostrud exercitation ullamco laboris\n\t'</span><br><span class="line">    + <span class="symbol">'nisi</span> ut aliquip ex ea commodo consequat. Duis aute\n\t'</span><br><span class="line">    + <span class="symbol">'irure</span> dolor <span class="keyword">in</span> reprehenderit <span class="keyword">in</span> voluptate velit esse.\n\t'</span><br><span class="line"><span class="comment">//但是还有一个更简单的方法，只使用引号：</span></span><br><span class="line"><span class="keyword">const</span> lorem = `Lorem ipsum dolor sit amet, consectetur</span><br><span class="line">    adipisicing elit, sed <span class="keyword">do</span> eiusmod tempor incididunt</span><br><span class="line">    ut labore et dolore magna aliqua. Ut enim ad minim</span><br><span class="line">    veniam, quis nostrud exercitation ullamco laboris</span><br><span class="line">    nisi ut aliquip ex ea commodo consequat. Duis aute</span><br><span class="line">    irure dolor <span class="keyword">in</span> reprehenderit <span class="keyword">in</span> voluptate velit esse.`</span><br></pre></td></tr></table></figure>
+<h4 id="高级篇"><a href="#高级篇" class="headerlink" title="高级篇"></a>高级篇</h4><ul>
+<li>1、变量赋值<ul>
+<li>当将一个变量的值赋给另一个变量时，首先需要确保原值不是 null、未定义的或空值。</li>
+<li>可以通过编写一个包含多个条件的判断语句来实现：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">variable</span><span class="number">1</span> !== null || <span class="keyword">variable</span><span class="number">1</span> !== undefined || <span class="keyword">variable</span><span class="number">1</span> !== <span class="string">''</span>) &#123;</span><br><span class="line">     <span class="keyword">let</span> <span class="keyword">variable</span><span class="number">2</span> = <span class="keyword">variable</span><span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 或者简写为以下的形式：</span></span><br><span class="line">const <span class="keyword">variable</span><span class="number">2</span> = <span class="keyword">variable</span><span class="number">1</span> || <span class="string">'new'</span>;</span><br><span class="line"><span class="comment">// 可以将下面的代码粘贴到 es6console 中，自己测试：</span></span><br><span class="line"><span class="keyword">let</span> <span class="keyword">variable</span><span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="keyword">variable</span><span class="number">2</span> = <span class="keyword">variable</span><span class="number">1</span>  || <span class="string">''</span>;</span><br><span class="line">console.log(<span class="keyword">variable</span><span class="number">2</span> === <span class="string">''</span>); <span class="comment">// prints true</span></span><br><span class="line"><span class="keyword">variable</span><span class="number">1</span> = <span class="string">'foo'</span>;</span><br><span class="line"><span class="keyword">variable</span><span class="number">2</span> = <span class="keyword">variable</span><span class="number">1</span>  || <span class="string">''</span>;</span><br><span class="line">console.log(<span class="keyword">variable</span><span class="number">2</span>); <span class="comment">// prints foo</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>2、默认值赋值<ul>
+<li>如果预期参数是 null 或未定义，则不需要写六行代码来分配默认值。我们可以只使用一个简短的逻辑运算符，只用一行代码就能完成相同的操作。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let dbHost;</span><br><span class="line"><span class="built_in">if</span> (<span class="built_in">process</span>.env.DB_HOST) &#123;</span><br><span class="line">  dbHost = <span class="built_in">process</span>.env.DB_HOST;</span><br><span class="line">&#125; <span class="built_in">else</span> &#123;</span><br><span class="line">  dbHost = <span class="string">'localhost'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">const</span> dbHost = <span class="built_in">process</span>.env.DB_HOST || <span class="string">'localhost'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3、对象属性<ul>
+<li>ES6 提供了一个很简单的办法，来分配属性的对象。如果属性名与 key 名相同，则可以使用简写。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; x:x, y:y &#125;;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123; x, y &#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>4、箭头函数<ul>
+<li>经典函数很容易读写，但是如果把它们嵌套在其它函数中进行调用时，整个函数就会变得有些冗长和混乱。这时候可以使用箭头函数来简写：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello'</span>, name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Loaded'</span>)</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line">list.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(item);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line">sayHello = <span class="function"><span class="params">name</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Hello'</span>, name);</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Loaded'</span>), <span class="number">2000</span>);</span><br><span class="line">list.forEach(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>5、隐式返回值<ul>
+<li>返回值是我们通常用来返回函数最终结果的关键字。只有一个语句的箭头函数，可以隐式返回结果（函数必须省略括号（{ }），以便省略返回关键字）。<br>要返回多行语句（例如对象文本），需要使用（）而不是{ }来包裹函数体。这样可以确保代码以单个语句的形式进行求值。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calcCircumference</span>(<span class="params">diameter</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * diameter</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line">calcCircumference = <span class="function"><span class="params">diameter</span> =&gt;</span> (</span><br><span class="line">  <span class="built_in">Math</span>.PI * diameter;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>6、默认参数值<ul>
+<li>可以使用 if 语句来定义函数参数的默认值。ES6 中规定了可以在函数声明中定义默认值。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">volume</span>(<span class="params">l, w, h</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (w === <span class="literal">undefined</span>)</span><br><span class="line">    w = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">if</span> (h === <span class="literal">undefined</span>)</span><br><span class="line">    h = <span class="number">4</span>;</span><br><span class="line">  <span class="keyword">return</span> l * w * h;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line">volume = <span class="function">(<span class="params">l, w = <span class="number">3</span>, h = <span class="number">4</span> </span>) =&gt;</span> (l * w * h);</span><br><span class="line">volume(<span class="number">2</span>) <span class="comment">//output: 24</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>7、模板字符串<ul>
+<li>过去我们习惯了使用“+”将多个变量转换为字符串，但是有没有更简单的方法呢？</li>
+<li>ES6 提供了相应的方法，我们可以使用反引号和 $ { } 将变量合成一个字符串。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> welcome = <span class="string">'You have logged in as '</span> + first + <span class="string">' '</span> + last + <span class="string">'.'</span></span><br><span class="line"><span class="keyword">const</span> db = <span class="string">'http://'</span> + host + <span class="string">':'</span> + port + <span class="string">'/'</span> + database;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">const</span> welcome = <span class="string">`You have logged in as <span class="subst">$&#123;first&#125;</span> <span class="subst">$&#123;last&#125;</span>`</span>;</span><br><span class="line"><span class="keyword">const</span> db = <span class="string">`http://<span class="subst">$&#123;host&#125;</span>:<span class="subst">$&#123;port&#125;</span>/<span class="subst">$&#123;database&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>8、解构赋值<ul>
+<li>解构赋值是一种表达式，用于从数组或对象中快速提取属性值，并赋给定义的变量。</li>
+<li>在代码简写方面，解构赋值能达到很好的效果。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> observable = require(<span class="string">'mobx/observable'</span>);</span><br><span class="line"><span class="keyword">const</span> action = require(<span class="string">'mobx/action'</span>);</span><br><span class="line"><span class="keyword">const</span> runInAction = require(<span class="string">'mobx/runInAction'</span>);</span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">this</span>.props.store;</span><br><span class="line"><span class="keyword">const</span> form = <span class="keyword">this</span>.props.form;</span><br><span class="line"><span class="keyword">const</span> loading = <span class="keyword">this</span>.props.loading;</span><br><span class="line"><span class="keyword">const</span> errors = <span class="keyword">this</span>.props.errors;</span><br><span class="line"><span class="keyword">const</span> entity = <span class="keyword">this</span>.props.entity;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">import</span> &#123; observable, action, runInAction &#125; from <span class="string">'mobx'</span>;</span><br><span class="line"><span class="keyword">const</span> &#123; store, form, loading, errors, entity &#125; = <span class="keyword">this</span>.props;</span><br><span class="line"><span class="comment">// 甚至可以指定自己的变量名：</span></span><br><span class="line"><span class="keyword">const</span> &#123; store, form, loading, errors, entity:contact &#125; = <span class="keyword">this</span>.props;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>9、展开运算符<ul>
+<li>展开运算符是在 ES6 中引入的，使用展开运算符能够让 JavaScript 代码更加有效和有趣。</li>
+<li>使用展开运算符可以替换某些数组函数。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// joining arrays</span></span><br><span class="line"><span class="keyword">const</span> odd = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> nums = [<span class="number">2</span> ,<span class="number">4</span> , <span class="number">6</span>].<span class="built_in">concat</span>(odd);</span><br><span class="line"></span><br><span class="line"><span class="comment">// cloning arrays</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = arr.slice( )</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="comment">// joining arrays</span></span><br><span class="line"><span class="keyword">const</span> odd = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span> ];</span><br><span class="line"><span class="keyword">const</span> nums = [<span class="number">2</span> ,<span class="number">4</span> , <span class="number">6</span>, ...odd];</span><br><span class="line">console.<span class="built_in">log</span>(nums); <span class="comment">// [ 2, 4, 6, 1, 3, 5 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// cloning arrays</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = [...arr];</span><br><span class="line"><span class="comment">// 和 concat( ) 功能不同的是，用户可以使用扩展运算符在任何一个数组中插入另一个数组。</span></span><br><span class="line"><span class="keyword">const</span> odd = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span> ];</span><br><span class="line"><span class="keyword">const</span> nums = [<span class="number">2</span>, ...odd, <span class="number">4</span> , <span class="number">6</span>];</span><br><span class="line"><span class="comment">// 也可以将展开运算符和 ES6 解构符号结合使用：</span></span><br><span class="line"><span class="keyword">const</span> &#123; a, b, ...z &#125; = &#123; a: <span class="number">1</span>, b: <span class="number">2</span>, c: <span class="number">3</span>, d: <span class="number">4</span> &#125;;</span><br><span class="line">console.<span class="built_in">log</span>(a) <span class="comment">// 1</span></span><br><span class="line">console.<span class="built_in">log</span>(b) <span class="comment">// 2</span></span><br><span class="line">console.<span class="built_in">log</span>(z) <span class="comment">// &#123; c: 3, d: 4 &#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>10、强制参数<ul>
+<li>默认情况下，如果不向函数参数传值，那么 JavaScript 会将函数参数设置为未定义。其它一些语言则会发出警告或错误。要执行参数分配，可以使用if语句抛出未定义的错误，或者可以利用“强制参数”。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">bar</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(bar === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Missing parameter!'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line">mandatory = <span class="function"><span class="params">( )</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Missing parameter!'</span>);</span><br><span class="line">&#125;</span><br><span class="line">foo = <span class="function">(<span class="params">bar = mandatory( </span>)) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>11、Array.find<ul>
+<li>如果你曾经编写过普通 JavaScript 中的 find 函数，那么你可能使用了 for 循环。在 ES6 中，介绍了一种名为 find（）的新数组函数，可以实现 for 循环的简写。<br>const pets = [</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="built_in">type</span>: <span class="string">'Dog'</span>, <span class="built_in">name</span>: <span class="string">'Max'</span>&#125;,</span><br><span class="line">  &#123; <span class="built_in">type</span>: <span class="string">'Cat'</span>, <span class="built_in">name</span>: <span class="string">'Karl'</span>&#125;,</span><br><span class="line">  &#123; <span class="built_in">type</span>: <span class="string">'Dog'</span>, <span class="built_in">name</span>: <span class="string">'Tommy'</span>&#125;,</span><br><span class="line">]</span><br><span class="line">function findDog(<span class="built_in">name</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span>(let i = <span class="number">0</span>; i&lt;pets.length; ++i) &#123;</span><br><span class="line">    <span class="keyword">if</span>(pets[i].<span class="built_in">type</span> === <span class="string">'Dog'</span> &amp;&amp; pets[i].<span class="built_in">name</span> === <span class="built_in">name</span>) &#123;</span><br><span class="line">      return pets[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line">pet = pets.<span class="built_in">find</span>(pet =&gt; pet.<span class="built_in">type</span> ===<span class="string">'Dog'</span> &amp;&amp; pet.<span class="built_in">name</span> === <span class="string">'Tommy'</span>);</span><br><span class="line">console.<span class="built_in">log</span>(pet); <span class="comment">// &#123; type: 'Dog', name: 'Tommy' &#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>12、Object [key]<ul>
+<li>虽然将 foo.bar 写成 foo [‘bar’] 是一种常见的做法，但是这种做法构成了编写可重用代码的基础。</li>
+<li>请考虑下面这个验证函数的简化示例：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="keyword">validate</span>(values) &#123;</span><br><span class="line">  <span class="keyword">if</span>(!values.first)</span><br><span class="line">    <span class="keyword">return</span><span class="built_in"> false</span>;</span><br><span class="line">  <span class="keyword">if</span>(!values<span class="built_in">.last</span>)</span><br><span class="line">    <span class="keyword">return</span><span class="built_in"> false</span>;</span><br><span class="line">  <span class="keyword">return</span><span class="built_in"> true</span>;</span><br><span class="line">&#125;</span><br><span class="line">console.log(<span class="keyword">validate</span>(&#123;first:<span class="string">'Bruce'</span><span class="built_in">,last</span>:<span class="string">'Wayne'</span>&#125;)); //<span class="built_in"> true</span></span><br><span class="line">// 上面的函数完美的完成验证工作。但是当有很多表单，则需要应用验证，此时会有不同的字段和规则。如果可以构建一个在运行时配置的通用验证函数，会是一个好选择。</span><br><span class="line">// object validation rules</span><br><span class="line">const <span class="keyword">schema</span> = &#123;</span><br><span class="line">  first: &#123;</span><br><span class="line">    required:true</span><br><span class="line">  &#125;,</span><br><span class="line"> <span class="built_in"> last</span>: &#123;</span><br><span class="line">    required:true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// universal validation <span class="keyword">function</span></span><br><span class="line">const <span class="keyword">validate</span> = (<span class="keyword">schema</span>, values) =&gt; &#123;</span><br><span class="line">  <span class="keyword">for</span>(field <span class="keyword">in</span> <span class="keyword">schema</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">schema</span>[field].required) &#123;</span><br><span class="line">      <span class="keyword">if</span>(!values[field]) &#123;</span><br><span class="line">        <span class="keyword">return</span><span class="built_in"> false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span><span class="built_in"> true</span>;</span><br><span class="line">&#125;</span><br><span class="line">console.log(<span class="keyword">validate</span>(<span class="keyword">schema</span>, &#123;first:<span class="string">'Bruce'</span>&#125;)); //<span class="built_in"> false</span></span><br><span class="line">console.log(<span class="keyword">validate</span>(<span class="keyword">schema</span>, &#123;first:<span class="string">'Bruce'</span><span class="built_in">,last</span>:<span class="string">'Wayne'</span>&#125;)); //<span class="built_in"> true</span></span><br><span class="line">// 现在有了这个验证函数，我们就可以在所有窗体中重用，而无需为每个窗体编写自定义验证函数。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>13、双位操作符<ul>
+<li>位操作符是 JavaScript 初级教程的基本知识点，但是我们却不常使用位操作符。</li>
+<li>因为在不处理二进制的情况下，没有人愿意使用 1 和 0。</li>
+<li>但是双位操作符却有一个很实用的案例。你可以使用双位操作符来替代 Math.floor( )。双否定位操作符的优势在于它执行相同的操作运行速度更快。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Math.floor(<span class="number">4.9</span>) === <span class="number">4</span> <span class="comment">//true</span></span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line">~~<span class="number">4.9</span> === <span class="number">4</span> <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -383,15 +535,15 @@
   
 
   
-  <div id="SOHUCS" sid="js必备工具方法" ></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+  <div id="SOHUCS" sid="js必备工具方法"></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
 <script type="text/javascript">
     window.changyan.api.config({
         appid: "cyrYAo8vL",
         conf: "prod_e8cafb700cafc04daf7ddac62371a657"
     });
 </script>
-</script>
+
   
 
   
@@ -406,7 +558,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 ismatch
+    		&copy; 2019 ismatch
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -493,10 +645,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">诗和远方</a>
               </li>
              
@@ -505,15 +653,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">.Net基础</a>
+                <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SourceCode</a>
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机基础</a>
+                <a href="javascript:void(0)" class="js-tag color3">框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,7 +673,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color2">.Net基础</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,11 +681,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color1">SourceCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机基础</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">My</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">心情</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大佬</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,13 +715,25 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
