@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="丹麦的面包不单卖的博客">
 <meta property="og:description" content="RenameTool C#项目重命名工具 项目地址 实际使用过程中对于中文编码的处理还有问题，看了编码检测代码，感觉没啥问题…  代码截取 一个控制台里封装用户输入的类,很有意思 12345678910111213public class CmdReader    &amp;#123;        public static string ReadLine(string tipText, Func&amp;lt">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-06T15:45:24.804Z">
+<meta property="og:updated_time" content="2019-06-17T00:42:43.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读RenameTool源码有感">
 <meta name="twitter:description" content="RenameTool C#项目重命名工具 项目地址 实际使用过程中对于中文编码的处理还有问题，看了编码检测代码，感觉没啥问题…  代码截取 一个控制台里封装用户输入的类,很有意思 12345678910111213public class CmdReader    &amp;#123;        public static string ReadLine(string tipText, Func&amp;lt">
@@ -54,13 +54,15 @@
 		  <h1 class="header-author"><a href="/">ismatch</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">便纵有千种风情,更与何人说。</p>
+		<p class="header-subtitle">遇见你那天，阳光很好，BUG很少。</p>
 		
 
 		<nav class="header-menu">
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="http://139.199.207.128:6323">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -112,9 +114,11 @@
 			  <h1 class="header-author js-header-author">ismatch</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>便纵有千种风情,更与何人说。<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>遇见你那天，阳光很好，BUG很少。<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 				
 			
@@ -138,7 +142,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="http://139.199.207.128:6323">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -180,10 +186,10 @@
 </ul>
 <h4 id="代码截取"><a href="#代码截取" class="headerlink" title="代码截取"></a>代码截取</h4><ul>
 <li><p>一个控制台里封装用户输入的类,很有意思</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CmdReader</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">string</span> <span class="title">ReadLine</span>(<span class="params"><span class="keyword">string</span> tipText, Func&lt;<span class="keyword">string</span>, <span class="keyword">bool</span>&gt; validate = <span class="literal">null</span></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">var</span> input = <span class="keyword">string</span>.Empty;</span><br><span class="line">            <span class="keyword">while</span> (<span class="keyword">string</span>.IsNullOrWhiteSpace(input) || (validate != <span class="literal">null</span> &amp;&amp; !validate(input)))</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(tipText);</span><br><span class="line">                input = Console.ReadLine();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> input;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CmdReader</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">string</span> <span class="title">ReadLine</span>(<span class="params"><span class="keyword">string</span> tipText, Func&lt;<span class="keyword">string</span>, <span class="keyword">bool</span>&gt; validate = <span class="literal">null</span></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> input = <span class="keyword">string</span>.Empty;</span><br><span class="line">            <span class="keyword">while</span> (<span class="keyword">string</span>.IsNullOrWhiteSpace(input) || (validate != <span class="literal">null</span> &amp;&amp; !validate(input)))</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(tipText);</span><br><span class="line">                input = Console.ReadLine();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> input;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>配置文件的处理，最近见到了许多类似的写法，一个静态方法实例化自己</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Configuration</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> IEnumerable&lt;<span class="keyword">string</span>&gt; IgnoreFolders &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = <span class="keyword">new</span> HashSet&lt;<span class="keyword">string</span>&gt;();</span><br><span class="line">        <span class="keyword">public</span> IEnumerable&lt;<span class="keyword">string</span>&gt; IgnoreExtensions &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = <span class="keyword">new</span> HashSet&lt;<span class="keyword">string</span>&gt;();</span><br><span class="line">        <span class="keyword">public</span> IEnumerable&lt;<span class="keyword">string</span>&gt; CopyFolders &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = <span class="keyword">new</span> HashSet&lt;<span class="keyword">string</span>&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Configuration <span class="title">Build</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">var</span> builder = <span class="keyword">new</span> ConfigurationBuilder()</span><br><span class="line">                .SetBasePath(Directory.GetCurrentDirectory())</span><br><span class="line">                .AddJsonFile(<span class="string">"appsettings.json"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> config = builder.Build();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Configuration</span><br><span class="line">            &#123;</span><br><span class="line">                IgnoreFolders = config[<span class="keyword">nameof</span>(IgnoreFolders)].TrimSplit(<span class="string">','</span>),</span><br><span class="line">                IgnoreExtensions = config[<span class="keyword">nameof</span>(IgnoreExtensions)].TrimSplit(<span class="string">','</span>),</span><br><span class="line">                CopyFolders = config[<span class="keyword">nameof</span>(CopyFolders)].TrimSplit(<span class="string">','</span>)</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Configuration</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> IEnumerable&lt;<span class="keyword">string</span>&gt; IgnoreFolders &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = <span class="keyword">new</span> HashSet&lt;<span class="keyword">string</span>&gt;();</span><br><span class="line">        <span class="keyword">public</span> IEnumerable&lt;<span class="keyword">string</span>&gt; IgnoreExtensions &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = <span class="keyword">new</span> HashSet&lt;<span class="keyword">string</span>&gt;();</span><br><span class="line">        <span class="keyword">public</span> IEnumerable&lt;<span class="keyword">string</span>&gt; CopyFolders &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = <span class="keyword">new</span> HashSet&lt;<span class="keyword">string</span>&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Configuration <span class="title">Build</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> builder = <span class="keyword">new</span> ConfigurationBuilder()</span><br><span class="line">                .SetBasePath(Directory.GetCurrentDirectory())</span><br><span class="line">                .AddJsonFile(<span class="string">"appsettings.json"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> config = builder.Build();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Configuration</span><br><span class="line">            &#123;</span><br><span class="line">                IgnoreFolders = config[<span class="keyword">nameof</span>(IgnoreFolders)].TrimSplit(<span class="string">','</span>),</span><br><span class="line">                IgnoreExtensions = config[<span class="keyword">nameof</span>(IgnoreExtensions)].TrimSplit(<span class="string">','</span>),</span><br><span class="line">                CopyFolders = config[<span class="keyword">nameof</span>(CopyFolders)].TrimSplit(<span class="string">','</span>)</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在vs里文件右键属性可以设置是否复制到输出目录，特别是针对于某些配置文件，生成或者发布项目的时候就可以带上配置文件，直到今天才知道有这个东西，实在忏愧</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 实际就是在项目文件里这么写 </span><br><span class="line">// PreserveNewest：如果较新则复制 Always：始终复制</span><br><span class="line"><span class="tag">&lt;<span class="name">ItemGroup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">None</span> <span class="attr">Update</span>=<span class="string">"appsettings.json"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">CopyToOutputDirectory</span>&gt;</span>PreserveNewest<span class="tag">&lt;/<span class="name">CopyToOutputDirectory</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">None</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">None</span> <span class="attr">Update</span>=<span class="string">"StartRename.bat"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">CopyToOutputDirectory</span>&gt;</span>PreserveNewest<span class="tag">&lt;/<span class="name">CopyToOutputDirectory</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">None</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ItemGroup</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
@@ -327,15 +333,15 @@
   
 
   
-  <div id="SOHUCS" sid="读RenameTool源码有感"></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
+  <div id="SOHUCS" sid="读RenameTool源码有感" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
         appid: "cyrYAo8vL",
         conf: "prod_e8cafb700cafc04daf7ddac62371a657"
     });
 </script>
-
+</script>
   
 
   
@@ -437,6 +443,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">C#</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">诗和远方</a>
               </li>
              
@@ -445,23 +467,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">books</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小东西</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,11 +475,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">观后感</a>
+                <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SourceCode</a>
+                <a href="javascript:void(0)" class="js-tag color1">books</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,15 +487,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">My</a>
+                <a href="javascript:void(0)" class="js-tag color3">大佬</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">心情</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color4">小东西</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -497,7 +499,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大佬</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">观后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">My</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,7 +519,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,11 +527,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color1">SourceCode</a>
               </li>
             
             <div class="clearfix"></div>
@@ -525,7 +535,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

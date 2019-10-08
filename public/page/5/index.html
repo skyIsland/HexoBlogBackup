@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -53,13 +53,15 @@
 		  <h1 class="header-author"><a href="/">ismatch</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">便纵有千种风情,更与何人说。</p>
+		<p class="header-subtitle">遇见你那天，阳光很好，BUG很少。</p>
 		
 
 		<nav class="header-menu">
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="http://139.199.207.128:6323">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -111,9 +113,11 @@
 			  <h1 class="header-author js-header-author">ismatch</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>便纵有千种风情,更与何人说。<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>遇见你那天，阳光很好，BUG很少。<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 				
 			
@@ -137,7 +141,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="http://139.199.207.128:6323">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -153,6 +159,321 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-js必备工具方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/05/js必备工具方法/">js必备工具方法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/05/js必备工具方法/" class="archive-article-date">
+  	<time datetime="2018-03-04T18:06:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.所有的可能组合方式</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> anagrams = <span class="built_in">str</span> =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">str</span>.length &lt;= <span class="number">2</span>)  <span class="keyword">return</span> <span class="built_in">str</span>.length === <span class="number">2</span> ? [<span class="built_in">str</span>, <span class="built_in">str</span>[<span class="number">1</span>] + <span class="built_in">str</span>[<span class="number">0</span>]] : [<span class="built_in">str</span>];</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">str</span>.<span class="built_in">split</span>(<span class="string">''</span>).reduce( (acc, letter, i) =&gt; &#123;</span><br><span class="line">    anagrams(<span class="built_in">str</span>.slice(<span class="number">0</span>, i) + <span class="built_in">str</span>.slice(i + <span class="number">1</span>)).<span class="built_in">map</span>( val =&gt; acc.push(letter + val) );</span><br><span class="line">    <span class="keyword">return</span> acc;</span><br><span class="line">  &#125;, []);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// anagrams('abc') -&gt; ['abc','acb','bac','bca','cab','cba']</span></span><br></pre></td></tr></table></figure>
+<p>2.数字数组的平均值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> average = <span class="function"><span class="params">arr</span> =&gt;</span></span><br><span class="line">  arr.reduce( <span class="function">(<span class="params">acc , val</span>) =&gt;</span> acc + val, <span class="number">0</span>) / arr.length;</span><br><span class="line"><span class="comment">// average([1,2,3]) -&gt; 2</span></span><br></pre></td></tr></table></figure>
+<p>3.每一个单词首字母转换为大写</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> capitalizeEveryWord = <span class="function"><span class="params">str</span> =&gt;</span> str.replace(<span class="regexp">/\b[a-z]/g</span>, <span class="function"><span class="params">char</span> =&gt;</span> char.toUpperCase());</span><br><span class="line"><span class="comment">// capitalizeEveryWord('hello world!') -&gt; 'Hello World!'</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/03/05/js必备工具方法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/05/js必备工具方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-开源程序地址" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/15/开源程序地址/">开源程序地址</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/15/开源程序地址/" class="archive-article-date">
+  	<time datetime="2018-02-14T18:07:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Desc </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/NLog/NLog" target="_blank" rel="noopener">NLog</a></td>
+<td>记录日志 </td>
+</tr>
+<tr>
+<td><a href="https://github.com/App-vNext/Polly" target="_blank" rel="noopener">Polly</a></td>
+<td>当http请求失败，进行重试 </td>
+</tr>
+<tr>
+<td><a href="https://github.com/AngleSharp/AngleSharp" target="_blank" rel="noopener">AngleSharp</a></td>
+<td>网页解析</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jstedfast/MailKit" target="_blank" rel="noopener">MailKit</a></td>
+<td>发送邮件 </td>
+</tr>
+<tr>
+<td><a href="https://github.com/dotnetcore/Util" target="_blank" rel="noopener">Util</a></td>
+<td>.net core平台下的应用框架 </td>
+</tr>
+<tr>
+<td><a href="https://github.com/PomeloFoundation/dotNETCore-Extensions" target="_blank" rel="noopener">dotNETCore-Extensions</a></td>
+<td>DoNetCore扩展</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Jimmey-Jiang/Common.Utility" target="_blank" rel="noopener">Common.Utility</a></td>
+<td>比较全面的c#帮助类，各种功能性代码。</td>
+</tr>
+<tr>
+<td><a href="https://github.com/VictorTzeng/Zxw.Framework.NetCore" target="_blank" rel="noopener">Zxw.Framework.NetCore</a></td>
+<td>基于EF Core的Code First模式的DotNetCore快速开发框架</td>
+</tr>
+<tr>
+<td><a href="https://github.com/yukozh/csharp-algorithms" target="_blank" rel="noopener">csharp-algorithms</a></td>
+<td>C#实现的各种算法</td>
+</tr>
+<tr>
+<td><a href="https://github.com/trekhleb/javascript-algorithms" target="_blank" rel="noopener">javascript-algorithms</a></td>
+<td>JavaScript 算法与数据结构</td>
+</tr>
+<tr>
+<td><a href="https://github.com/dotnetcore/DotnetSpider" target="_blank" rel="noopener">DotnetSpider</a></td>
+<td>DotnetSpider</td>
+</tr>
+<tr>
+<td><a href="https://github.com/qq573011406/KindleHelper" target="_blank" rel="noopener">KindleHelper</a></td>
+<td>全网小说搜索,下载.可自动生成mobi格式小说.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/houshanren/hangzhou_house_knowledge" target="_blank" rel="noopener">hangzhou_house_knowledge</a></td>
+<td>2017年买房经历总结出来的买房购房知识分享.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">ree-programming-books-zh_CN</a></td>
+<td>免费的计算机编程类中文书籍</td>
+</tr>
+<tr>
+<td><a href="https://github.com/thangchung/awesome-dotnet-core" target="_blank" rel="noopener">awesome-dotnet-core</a></td>
+<td>一个很棒的.NET Core库、工具、框架和软件的集合</td>
+</tr>
+<tr>
+<td><a href="https://github.com/thangchung/awesome-dotnet-core" target="_blank" rel="noopener">SiteServer CMS</a></td>
+<td>基于.NET平台的CMS系统</td>
+</tr>
+<tr>
+<td><a href="https://github.com/charlesw/tesseract" target="_blank" rel="noopener">tesseract</a></td>
+<td>A .Net wrapper for tesseract-ocr</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>更新时间 2018年12月21日00:00:03</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/15/开源程序地址/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-小东西" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/15/小东西/">小东西</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/15/小东西/" class="archive-article-date">
+  	<time datetime="2018-02-14T18:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><a href="https://github.com/skyIsland/Sky.Zhihu.Crawler" target="_blank" rel="noopener">知乎图片抓取</a></li>
+<li><a href="https://github.com/skyIsland/FlyAutoSign" target="_blank" rel="noopener">Fly社区自动签到</a><blockquote>
+<p>updating</p>
+</blockquote>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小东西</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/15/小东西/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-2018年计划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -197,7 +518,7 @@
       
 
       
-    </li></ul></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -453,7 +774,7 @@
       
 
       
-    </li></ul></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -569,241 +890,9 @@
 
 
   
-    <article id="post-位字节字符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/04/位字节字符/">位字节字符</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/04/位字节字符/" class="archive-article-date">
-  	<time datetime="2018-01-04T13:49:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-bit：位"><a href="#1-bit：位" class="headerlink" title="1. bit：位"></a>1. bit：位</h3><pre><code>一个二进制数据0或1，是1bit；
-</code></pre><h3 id="2-byte：字节"><a href="#2-byte：字节" class="headerlink" title="2. byte：字节"></a>2. byte：字节</h3><pre><code>存储空间的基本计量单位，如：MySQL中定义 VARCHAR(45)  即是指 45个字节；
-1 byte = 8 bit
-</code></pre><h3 id="3-一个英文字符占一个字节；"><a href="#3-一个英文字符占一个字节；" class="headerlink" title="3. 一个英文字符占一个字节；"></a>3. 一个英文字符占一个字节；</h3><pre><code>1 字母 = 1 byte = 8 bit
-</code></pre><h3 id="4-一个汉字占2个字节；"><a href="#4-一个汉字占2个字节；" class="headerlink" title="4. 一个汉字占2个字节；"></a>4. 一个汉字占2个字节；</h3><pre><code>1 汉字 = 2 byte = 16 bit
-</code></pre><h3 id="5-标点符号"><a href="#5-标点符号" class="headerlink" title="5. 标点符号"></a>5. 标点符号</h3><pre><code>A&gt;.  汉字输入状态下，默认为全角输入方式；
-B&gt;.  英文输入状态下，默认为半角输入方式；
-
-C&gt;.  全角输入方式下，标点符号占2字节；
-D&gt;.  半角输入方式下，标点符号占1字节；
-
-故：汉字输入状态下的字符，占2个字节 (但不排除，自己更改了默认设置)；
-        英文输入状态下的字符，占1个字节 (但不排除，自己更改了默认设置)
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/04/位字节字符/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Js比较时间大小" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/04/Js比较时间大小/">Js比较时间大小</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/04/Js比较时间大小/" class="archive-article-date">
-  	<time datetime="2018-01-04T13:41:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkDate</span>(<span class="params">param</span>) </span>&#123;</span><br><span class="line">           <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>;</span><br><span class="line">           <span class="keyword">var</span> time = <span class="keyword">new</span> <span class="built_in">Date</span>(param);</span><br><span class="line">           <span class="keyword">if</span> (now &lt;= time) &#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/04/Js比较时间大小/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HelloWorld" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/04/HelloWorld/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/04/HelloWorld/" class="archive-article-date">
-  	<time datetime="2018-01-04T13:37:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="这世间上有无数种等待-最好的一种-叫做来日可期"><a href="#这世间上有无数种等待-最好的一种-叫做来日可期" class="headerlink" title="这世间上有无数种等待,最好的一种,叫做来日可期."></a>这世间上有无数种等待,最好的一种,叫做来日可期.</h4>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">诗和远方</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/04/HelloWorld/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -902,6 +991,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">C#</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">诗和远方</a>
               </li>
              
@@ -910,23 +1015,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">books</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小东西</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -934,11 +1023,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">观后感</a>
+                <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SourceCode</a>
+                <a href="javascript:void(0)" class="js-tag color1">books</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -946,15 +1035,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">My</a>
+                <a href="javascript:void(0)" class="js-tag color3">大佬</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">心情</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color4">小东西</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -962,7 +1047,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大佬</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">观后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">My</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -970,7 +1067,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -978,11 +1075,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color1">SourceCode</a>
               </li>
             
             <div class="clearfix"></div>
@@ -990,7 +1083,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

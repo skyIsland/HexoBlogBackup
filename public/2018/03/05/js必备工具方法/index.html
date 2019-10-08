@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="丹麦的面包不单卖的博客">
 <meta property="og:description" content="1.所有的可能组合方式 12345678const anagrams = str =&amp;gt; &amp;#123;  if(str.length &amp;lt;= 2)  return str.length === 2 ? [str, str[1] + str[0]] : [str];  return str.split(&apos;&apos;).reduce( (acc, letter, i) =&amp;gt; &amp;#123;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-18T14:49:25.826Z">
+<meta property="og:updated_time" content="2019-06-17T00:42:43.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js必备工具方法">
 <meta name="twitter:description" content="1.所有的可能组合方式 12345678const anagrams = str =&amp;gt; &amp;#123;  if(str.length &amp;lt;= 2)  return str.length === 2 ? [str, str[1] + str[0]] : [str];  return str.split(&apos;&apos;).reduce( (acc, letter, i) =&amp;gt; &amp;#123;">
@@ -54,13 +54,15 @@
 		  <h1 class="header-author"><a href="/">ismatch</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">便纵有千种风情,更与何人说。</p>
+		<p class="header-subtitle">遇见你那天，阳光很好，BUG很少。</p>
 		
 
 		<nav class="header-menu">
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="http://139.199.207.128:6323">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -112,9 +114,11 @@
 			  <h1 class="header-author js-header-author">ismatch</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>便纵有千种风情,更与何人说。<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>遇见你那天，阳光很好，BUG很少。<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 				
 			
@@ -138,7 +142,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="http://139.199.207.128:6323">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -269,7 +275,7 @@
 <ul>
 <li><p>4、if 语句</p>
 <ul>
-<li>在使用 if 进行基本判断时，可以省略赋值运算符。<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (likeJavaScript === true)</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">if</span> (likeJavaScript)</span><br></pre></td></tr></table></figure>
+<li>在使用 if 进行基本判断时，可以省略赋值运算符。<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="comment">(likeJavaScript === true)</span></span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">if</span> <span class="comment">(likeJavaScript)</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -279,7 +285,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123; &#125;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1</span>e<span class="number">7</span>; i++) &#123; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123; &#125;</span><br><span class="line">// 简写为：</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1</span>e7; i++) &#123; &#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>6、多行字符串<ul>
 <li>如果需要在代码中编写多行字符串，就像下面这样：</li>
@@ -345,7 +351,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> observable = require(<span class="string">'mobx/observable'</span>);</span><br><span class="line"><span class="keyword">const</span> action = require(<span class="string">'mobx/action'</span>);</span><br><span class="line"><span class="keyword">const</span> runInAction = require(<span class="string">'mobx/runInAction'</span>);</span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">this</span>.props.store;</span><br><span class="line"><span class="keyword">const</span> form = <span class="keyword">this</span>.props.form;</span><br><span class="line"><span class="keyword">const</span> loading = <span class="keyword">this</span>.props.loading;</span><br><span class="line"><span class="keyword">const</span> errors = <span class="keyword">this</span>.props.errors;</span><br><span class="line"><span class="keyword">const</span> entity = <span class="keyword">this</span>.props.entity;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">import</span> &#123; observable, action, runInAction &#125; from <span class="string">'mobx'</span>;</span><br><span class="line"><span class="keyword">const</span> &#123; store, form, loading, errors, entity &#125; = <span class="keyword">this</span>.props;</span><br><span class="line"><span class="comment">// 甚至可以指定自己的变量名：</span></span><br><span class="line"><span class="keyword">const</span> &#123; store, form, loading, errors, entity:contact &#125; = <span class="keyword">this</span>.props;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> observable = <span class="built_in">require</span>(<span class="string">'mobx/observable'</span>);</span><br><span class="line"><span class="keyword">const</span> action = <span class="built_in">require</span>(<span class="string">'mobx/action'</span>);</span><br><span class="line"><span class="keyword">const</span> runInAction = <span class="built_in">require</span>(<span class="string">'mobx/runInAction'</span>);</span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">this</span>.props.store;</span><br><span class="line"><span class="keyword">const</span> form = <span class="keyword">this</span>.props.form;</span><br><span class="line"><span class="keyword">const</span> loading = <span class="keyword">this</span>.props.loading;</span><br><span class="line"><span class="keyword">const</span> errors = <span class="keyword">this</span>.props.errors;</span><br><span class="line"><span class="keyword">const</span> entity = <span class="keyword">this</span>.props.entity;</span><br><span class="line"><span class="comment">// 简写为：</span></span><br><span class="line"><span class="keyword">import</span> &#123; observable, action, runInAction &#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"><span class="keyword">const</span> &#123; store, form, loading, errors, entity &#125; = <span class="keyword">this</span>.props;</span><br><span class="line"><span class="comment">// 甚至可以指定自己的变量名：</span></span><br><span class="line"><span class="keyword">const</span> &#123; store, form, loading, errors, <span class="attr">entity</span>:contact &#125; = <span class="keyword">this</span>.props;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>9、展开运算符<ul>
 <li>展开运算符是在 ES6 中引入的，使用展开运算符能够让 JavaScript 代码更加有效和有趣。</li>
@@ -375,7 +381,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="keyword">validate</span>(values) &#123;</span><br><span class="line">  <span class="keyword">if</span>(!values.first)</span><br><span class="line">    <span class="keyword">return</span><span class="built_in"> false</span>;</span><br><span class="line">  <span class="keyword">if</span>(!values<span class="built_in">.last</span>)</span><br><span class="line">    <span class="keyword">return</span><span class="built_in"> false</span>;</span><br><span class="line">  <span class="keyword">return</span><span class="built_in"> true</span>;</span><br><span class="line">&#125;</span><br><span class="line">console.log(<span class="keyword">validate</span>(&#123;first:<span class="string">'Bruce'</span><span class="built_in">,last</span>:<span class="string">'Wayne'</span>&#125;)); //<span class="built_in"> true</span></span><br><span class="line">// 上面的函数完美的完成验证工作。但是当有很多表单，则需要应用验证，此时会有不同的字段和规则。如果可以构建一个在运行时配置的通用验证函数，会是一个好选择。</span><br><span class="line">// object validation rules</span><br><span class="line">const <span class="keyword">schema</span> = &#123;</span><br><span class="line">  first: &#123;</span><br><span class="line">    required:true</span><br><span class="line">  &#125;,</span><br><span class="line"> <span class="built_in"> last</span>: &#123;</span><br><span class="line">    required:true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// universal validation <span class="keyword">function</span></span><br><span class="line">const <span class="keyword">validate</span> = (<span class="keyword">schema</span>, values) =&gt; &#123;</span><br><span class="line">  <span class="keyword">for</span>(field <span class="keyword">in</span> <span class="keyword">schema</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">schema</span>[field].required) &#123;</span><br><span class="line">      <span class="keyword">if</span>(!values[field]) &#123;</span><br><span class="line">        <span class="keyword">return</span><span class="built_in"> false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span><span class="built_in"> true</span>;</span><br><span class="line">&#125;</span><br><span class="line">console.log(<span class="keyword">validate</span>(<span class="keyword">schema</span>, &#123;first:<span class="string">'Bruce'</span>&#125;)); //<span class="built_in"> false</span></span><br><span class="line">console.log(<span class="keyword">validate</span>(<span class="keyword">schema</span>, &#123;first:<span class="string">'Bruce'</span><span class="built_in">,last</span>:<span class="string">'Wayne'</span>&#125;)); //<span class="built_in"> true</span></span><br><span class="line">// 现在有了这个验证函数，我们就可以在所有窗体中重用，而无需为每个窗体编写自定义验证函数。</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">validate</span>(<span class="params">values</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!values.first)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">if</span>(!values.last)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(validate(&#123;<span class="attr">first</span>:<span class="string">'Bruce'</span>,<span class="attr">last</span>:<span class="string">'Wayne'</span>&#125;)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 上面的函数完美的完成验证工作。但是当有很多表单，则需要应用验证，此时会有不同的字段和规则。如果可以构建一个在运行时配置的通用验证函数，会是一个好选择。</span></span><br><span class="line"><span class="comment">// object validation rules</span></span><br><span class="line"><span class="keyword">const</span> schema = &#123;</span><br><span class="line">  first: &#123;</span><br><span class="line">    required:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  last: &#123;</span><br><span class="line">    required:<span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// universal validation function</span></span><br><span class="line"><span class="keyword">const</span> validate = <span class="function">(<span class="params">schema, values</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">for</span>(field <span class="keyword">in</span> schema) &#123;</span><br><span class="line">    <span class="keyword">if</span>(schema[field].required) &#123;</span><br><span class="line">      <span class="keyword">if</span>(!values[field]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(validate(schema, &#123;<span class="attr">first</span>:<span class="string">'Bruce'</span>&#125;)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(validate(schema, &#123;<span class="attr">first</span>:<span class="string">'Bruce'</span>,<span class="attr">last</span>:<span class="string">'Wayne'</span>&#125;)); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 现在有了这个验证函数，我们就可以在所有窗体中重用，而无需为每个窗体编写自定义验证函数。</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>13、双位操作符<ul>
 <li>位操作符是 JavaScript 初级教程的基本知识点，但是我们却不常使用位操作符。</li>
@@ -535,15 +541,15 @@
   
 
   
-  <div id="SOHUCS" sid="js必备工具方法"></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
+  <div id="SOHUCS" sid="js必备工具方法" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
         appid: "cyrYAo8vL",
         conf: "prod_e8cafb700cafc04daf7ddac62371a657"
     });
 </script>
-
+</script>
   
 
   
@@ -645,6 +651,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">C#</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">诗和远方</a>
               </li>
              
@@ -653,23 +675,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">books</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小东西</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,11 +683,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">观后感</a>
+                <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SourceCode</a>
+                <a href="javascript:void(0)" class="js-tag color1">books</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,15 +695,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">My</a>
+                <a href="javascript:void(0)" class="js-tag color3">大佬</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">心情</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color4">小东西</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -705,7 +707,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大佬</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">观后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">My</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -713,7 +727,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -721,11 +735,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color1">SourceCode</a>
               </li>
             
             <div class="clearfix"></div>
@@ -733,7 +743,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
