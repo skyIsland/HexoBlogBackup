@@ -2,7 +2,7 @@
 
 menu:
   主页: /
-  相册: "http://139.199.207.128:6323"
+  相册: "http://gallery.ismatch.cn"
   
 
 # SubNav
@@ -18,7 +18,7 @@ subnav:
   #segmentfault: "#"
   #bilibili: "#"
   #acfun: "#"
-  mail: "mailto:ismatch@qq.com"
+  mail: "mailto:ismatch@163.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
