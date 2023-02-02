@@ -7,6 +7,7 @@ tags:
 - 方法/步骤
 	- 第一步，检查node.js是否安装，通过命令提示符，node -v npm -v查看，如果没有请先安装node.js,如下图.
    ![image](/files/vue-cli-getstart/1.png)
+   <!--more--> 
 	- 第二步，把npm换成cnpm，
 命令行输入npm install -g cnpm --registry=https://registry.npm.taobao.org
 然后cnpm -v查看版本，如下图
@@ -22,6 +23,7 @@ tags:
 ![image](/files/vue-cli-getstart/4-1.png)
 使用vue -V（这个Ｖ大写），如下图
 ![image](/files/vue-cli-getstart/4-2.png)
+
 	- 第五步，上面步骤安装完后，就可以利用vue-cli初始化vue项目
 在你想要安装项目的而目录下输入vue init webpack projectname（projectname是你项目的名称），
 Project name:——项目名称
