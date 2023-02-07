@@ -7,6 +7,7 @@ tags:
 - 方法/步骤
 	- 第一步，检查node.js是否安装，通过命令提示符，node -v npm -v查看，如果没有请先安装node.js,如下图.
    ![image](/files/vue-cli-getstart/1.png)
+   <!-- more -->
 	- 第二步，把npm换成cnpm，
 命令行输入npm install -g cnpm --registry=https://registry.npm.taobao.org
 然后cnpm -v查看版本，如下图
